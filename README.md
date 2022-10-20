@@ -11,6 +11,9 @@ To start: $ python -m console
 Development:
 
 1. Implement the low-level details of the tic-tac-toe library
+
+      1.0. Model the Tic-Tac-Toe Game Domain: identify the parts that make up the game and implement them using an object-oriented approach. By modeling the domain of the game with immutable objects results in modular and composable code that’s easier to test, maintain, debug, and understand
+  
 2. Use these to implement a higher-level game front end in a bottom-up fashion
 
   Resources: 
