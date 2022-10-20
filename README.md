@@ -2,9 +2,13 @@
 A bunch of fun project done in my spare time
 
 
-Project: Tic Tac Toe
+**Project: Tic Tac Toe**
 
 A Python library, which remains agnostic about the possible ways of presenting the game to the user in a graphical form. The library contains the core logic of the game and two artificial players. Then creating a sample front end to collect user input from the keyboard and visualize the game in the console using plain text
+
+To start: $ python -m console
+
+Development:
 
 1. Implement the low-level details of the tic-tac-toe library
 2. Use these to implement a higher-level game front end in a bottom-up fashion
@@ -21,8 +25,20 @@ A Python library, which remains agnostic about the possible ways of presenting t
   File Structure:
   
 ![image](https://user-images.githubusercontent.com/100158073/196912632-2200e5e9-08b0-4907-86f2-d24cbee77770.png)
+
+frontends/  is to house one or more concrete game implementations. Contains the __main__.py file, making it a runnable Python package from the command line
+
+library/ is the home folder for the game library 
+
+  tic_tac_toe.game/ a scaffolding designed to be extended by front ends
   
-Project: Pokemon
+  tic_tac_toe.logic/ the building blocks of the game
+  
+  pyproject.toml file contains the metadata necessary for building and packaging the library
+
+
+  
+**Project: Pokemon**
 
   Resources: 
   
