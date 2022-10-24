@@ -1,0 +1,10 @@
+Structure
+- Magic method __init__ first method that will run
+- Magic method __repr__ representation print
+- Magic method __gt__ greater than < and >
+
+Refactor
+- Remove nested loops
+- One task per function
+- Push repeated code to parent
+- Unit test
