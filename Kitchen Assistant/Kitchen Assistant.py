@@ -1,7 +1,3 @@
-# Calculates the price of each ingredient per gram
-def price_per_gram(price, quantity):
-    total = price / quantity
-    return f"{round(total, 2)}g"
 
 # Updates the quantity of a specific ingredient in the pantry
 def quantity_check(pantry, ingredient):
@@ -57,25 +53,25 @@ def compare_pantry_to_recipe(pantry, recipe):
     return [{recipe["Name"]: ingredient_comparison}]
 
 pantry = [
-    {"Name": "Gnocchi", "Price": 2.00, "Quantity": 900, "In Stock": False},
-    {"Name": "Udon Noodles", "Price": 2.00, "Quantity": 900, "In Stock": False},
-    {"Name": "Meatballs", "Price": 1.75, "Quantity": 300, "In Stock": False},
-    {"Name": "Bell Pepper", "Price": 1.35, "Quantity": 900, "In Stock": False},
-    {"Name": "Mushroom", "Price": 1.35, "Quantity": 900, "In Stock": False},
-    {"Name": "Tomato", "Price": 0.32, "Quantity": 400, "In Stock": False},
-    {"Name": "Scallions", "Price": 0.32, "Quantity": 400, "In Stock": False},
-    {"Name": "Edamame", "Price": 0.32, "Quantity": 400, "In Stock": False},
-    {"Name": "Cream Cheese", "Price": 3.00, "Quantity": 130, "In Stock": False},
-    {"Name": "Butter", "Price": 0.32, "Quantity": 400, "In Stock": False},
-    {"Name": "Soy Sauce", "Price": 0.32, "Quantity": 400, "In Stock": False},
-    {"Name": "Parsley", "Price": 0.55, "Quantity": 30, "In Stock": False},
-    {"Name": "Garlic", "Price": 1.25, "Quantity": 300, "In Stock": False},
-    {"Name": "Rosemary", "Price": 0.60, "Quantity": 27, "In Stock": False},
-    {"Name": "Salt", "Price": 1.25, "Quantity": 350, "In Stock": False},
-    {"Name": "Black Pepper", "Price": 0.90, "Quantity": 25, "In Stock": False},
-    {"Name": "Garlic Powder", "Price": 0.32, "Quantity": 400, "In Stock": False},
-    {"Name": "Chili", "Price": 0.70, "Quantity": 32, "In Stock": False},
-    {"Name": "Nutritional Yeast", "Price": 3.00, "Quantity": 100, "In Stock": False}
+    {"Name": "Gnocchi", "Price Per G": 0.04, "Quantity": 100, "In Stock": False},
+    {"Name": "Udon Noodles", "Price Per G": 0.03, "Quantity": 900, "In Stock": False},
+    {"Name": "Meatballs", "Price Per G": 0.02, "Quantity": 300, "In Stock": False},
+    {"Name": "Bell Pepper", "Price Per G": 0.03, "Quantity": 900, "In Stock": False},
+    {"Name": "Mushroom", "Price Per G": 0.04, "Quantity": 900, "In Stock": False},
+    {"Name": "Tomato", "Price Per G": 0.2, "Quantity": 400, "In Stock": False},
+    {"Name": "Scallions", "Price Per G": 0.02, "Quantity": 400, "In Stock": False},
+    {"Name": "Edamame", "Price Per G": 0.02, "Quantity": 400, "In Stock": False},
+    {"Name": "Cream Cheese", "Price Per G": 0.07, "Quantity": 130, "In Stock": False},
+    {"Name": "Butter", "Price Per G": 0.05, "Quantity": 400, "In Stock": False},
+    {"Name": "Soy Sauce", "Price Per G": 0.02, "Quantity": 400, "In Stock": False},
+    {"Name": "Parsley", "Price Per G": 0.05, "Quantity": 30, "In Stock": False},
+    {"Name": "Garlic", "Price Per G": 0.02, "Quantity": 300, "In Stock": False},
+    {"Name": "Rosemary", "Price Per G": 0.04, "Quantity": 27, "In Stock": False},
+    {"Name": "Salt", "Price Per G": 0.05, "Quantity": 350, "In Stock": False},
+    {"Name": "Black Pepper", "Price Per G": 0.05, "Quantity": 25, "In Stock": False},
+    {"Name": "Garlic Powder", "Price Per G": 0.01, "Quantity": 400, "In Stock": False},
+    {"Name": "Chili", "Price Per G": 0.01, "Quantity": 32, "In Stock": False},
+    {"Name": "Nutritional Yeast", "Price Per G": 0.03, "Quantity": 100, "In Stock": False}
 ]
 
 # Everything is in grams
@@ -114,12 +110,15 @@ recipe_book = [
 ]
 
 # CURRENTLY WORKING ON THIS
-# Need to remove the g
-def price_per_quantity(quantity, price):
-    total = quantity * price
-    total = round(total, 2)
-    #return f"£{total}"
-    return total
+# Calculates the price per gram based on the total price and quantity
+def price_per_gram(item):
+    
+    price = item["Price Per G"]
+    quantity = item["Quantity"]
+
+    total = quantity / price
+
+    return f"£{round(total, 2)}"
 
 def recipe_check(recipe):
 
