@@ -2,15 +2,20 @@ import time
 
 
 
-def set_timer(minutes) -> None:
+def set_timer(option) -> None:
 
-    print(f"Timer set for {minutes} minutes")
-    #time.sleep(minutes * 60)
-    print("Time's up!")
+    work_duration = option * 25
+    break_duration = option * 5
+
+    print(f"Work for {work_duration} minutes")
+    #time.sleep(work_duration * 60)
+    print("Break time!")
+
+    print(f"Break for {break_duration} minutes")
+    #time.sleep(break_duration * 60)
+    print("Work time!")
 
     return None 
-
-
 
 def get_pomidor() -> int:
 
@@ -19,12 +24,7 @@ def get_pomidor() -> int:
             option = int(input("How many pomidors would you like to work?"))
             if option in[1, 2, 3]:
                 print(f"Setting timer for {option} poms")
-                if option == 1:
-                    set_timer(25)
-                elif option == 2:
-                    set_timer(50)
-                elif option == 3:
-                    set_timer(75)
+                set_timer(option)
                 return option
             else:
                 print("Huh? Tell me again? 1, 2 or 3?")
@@ -40,7 +40,7 @@ def main() -> None:
     while True:
         response = input("Do you want to set a work session?").lower()
         if response.startswith("y"):
-            set_timer()
+            get_pomidor()
         else:
             print("Quit")
             break
@@ -50,8 +50,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    #main()
-    pomidor_duration = get_pomidor()
+    main()
 
 
 
@@ -85,6 +84,8 @@ if __name__ == "__main__":
 # POMIDOR TIMER #
 # Play noise when pom is finished
 # Set a custom time
+# Set custom break times
+# Option for timers to start automatically or on a button press
 # the time.sleep() function will halt the program execution for the specified duration, so be mindful when using it in your code. If you want to perform other actions while the timer is running, you can consider using threading or asynchronous programming. 
 
 # SECOND BRAIN #
@@ -109,6 +110,7 @@ if __name__ == "__main__":
 # Set timer 
 # Asks the user how many pomidors
 # Set timer for short (1 pom), medium (2 poms) or long (3 poms)
+# Add break times to pomidors
 
 
 
