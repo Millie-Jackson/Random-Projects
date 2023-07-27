@@ -1,3 +1,56 @@
+import pandas as pd # Modifying the recipe book
+import os # Creating the recipe book
+
+def load_recipe_book(file_path) -> pd.DataFrame:
+    return pd.read_csv(file_path)
+
+def save_recipe_book(recipe_book, file_path) -> None:
+
+    recipe_book.to_csv(file_path, index=False)
+
+    return None
+
+def add_recipe_to_book(recipe_book) -> pd.DataFrame:
+    
+    new_recipe = {
+        "Name": "Coconut and Citrus Green",
+        "Tag": ["Smoothie", "Drink", "Blender"],
+        "Servings": 2,
+        "Ingredients": {
+            "Orange": 2,
+            "Dates": 2,
+            "Banana": 1,
+            "Avocado": 1,
+            "Coconut Water": "120ml",
+            "Soy Milk": "120ml",
+            "Coconut Yogurt": "120ml",
+            "Mint": "5 leaves",
+            "Spinach": "45g"
+            }
+    }
+
+    # Convert new_recipe to a DataFrame and concat it into the recipe_book
+    new_recipe_df = pd.DataFrame([new_recipe])
+    recipe_book = pd.concat([recipe_book, new_recipe_df],  ignore_index=True)
+
+    return recipe_book
+
+def modify_recipe_book() -> pd.DataFrame:
+
+    file_path = "Kitchen Assistant/Recipe_Book.csv"
+    
+    # Check if the file exists and isnt empty
+    if os.path.exists(file_path) > 0:
+        recipe_book = load_recipe_book(file_path)
+    else:
+        # If the file doesnt exist, create it
+        recipe_book = pd.DataFrame(columns=["Name", "Tag", "Servings", "Ingredients"])
+
+    modified_recipe_book = add_recipe_to_book(recipe_book)
+    save_recipe_book(modified_recipe_book, file_path)
+
+    return modified_recipe_book
+
 
 # Updates the quantity of a specific ingredient in the pantry
 def quantity_check(pantry, ingredient):
@@ -131,11 +184,14 @@ def recipe_check(recipe):
             pass
     return None
 
+modified_recipe_book = modify_recipe_book()
+
 ## TO DO ##
 # Use a data class
 # Ingredients inherit from a class?
 # Put recipes in a separate file and read it in
 # Use Pandas to store recipes
+# Does not allow for duplicate recipes
 
 # Allow user to enter their own recipes
 # Allows user to enter their shopping

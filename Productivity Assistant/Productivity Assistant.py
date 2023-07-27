@@ -73,18 +73,18 @@ def ui() -> None:
     # Number of poms
     pomidor_lable = tk.Label(app, text="How many pomidors would you like to work?")
     pomidor_lable.pack()
-
     pomidor_var = tk.IntVar()
     pomidor_entry = tk.Entry(app, textvariable=pomidor_var)
     pomidor_entry.pack()
 
     # Start timer
-    start_button = tk.Button(app, text="Start Timer", command=set_timer())
+    start_button = tk.Button(app, text="Start Timer", command=set_timer)
     start_button.pack()
 
     app.mainloop()
 
-    print("Hello")
+    return None
+
 
 def main() -> None:
 
@@ -101,8 +101,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    #main()
-    ui()
+    #main() # Terminal based UI
+    ui() # UI
 
 
 
@@ -119,9 +119,15 @@ if __name__ == "__main__":
 # Tasks can be automatically allocated to calendar based on time to complete
 # Suggest afternoon slump
 # Suggest meal times
+    # Takes into account when you get hungry compared to macros
 # Suggest bedtime
 # Suggest waketime
-# Research 'The Power of When'
+# Research
+    # App: Motion
+    # Book: The Power of When'
+
+# FINANCES #
+# 50/30/20
 
 # HABITS #
 # Habit tracker
@@ -134,6 +140,7 @@ if __name__ == "__main__":
     # Pre Work Session
     # Post Work Session
 # Research
+    # The Poka-Yoke Approach
     # Book: Atomic Habits
     # Book: The Life-Changing Magic of Tidying
     # Book: Working Hard, Hardly Working
@@ -174,10 +181,26 @@ if __name__ == "__main__":
 # Tasks can be allocated a difficulty
 # Tasks can be grouped by study subject or catagory
 # Automatic Eisenhower matrix
+    # Auto list tasks that can be delegated to chatGPT
+        # Make key notes from a source
+        # Summerise a source
+        # Write LinkedIn posts
+        # Write a text
+        # Ask interview questions with feedback
 # Parkinsons Law
 # Prep for tomorrow
 # Study with me
 # Study motivation
+# Chores
+    # Clean surfaces
+    # Tidy surfaces
+    # Clean windows
+    # Hoover
+    # Washing
+        # Lights
+        # Darks
+        # Colours
+        # Bedding/Towels
 # Challenges
     # 1 week
         #
@@ -197,6 +220,12 @@ if __name__ == "__main__":
 # UI #
 # Ask questions in a text box
 # Display the timer on screen
+# Themes
+    # Neon
+    # Spring
+    # Autumn
+    # Winter
+    # Summer
 # Tasks can be viewed in an Eisenhower matrix
 # Pop out timer (so you can have it in the corner of your screen)
 # Notes are contained in a virtual notebook with pages turning and contents
@@ -211,6 +240,9 @@ if __name__ == "__main__":
 # Asks the user how many pomidors
 # Set timer for short (1 pom), medium (2 poms) or long (3 poms)
 # Add break times to pomidors
+
+# UI #
+# Basic UI
 
 
 
