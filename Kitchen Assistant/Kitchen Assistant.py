@@ -13,20 +13,17 @@ def save_recipe_book(recipe_book, file_path) -> None:
 def add_recipe_to_book(recipe_book) -> pd.DataFrame:
     
     new_recipe = {
-        "Name": "Coconut and Citrus Green",
+        "Name": "Mango Peach Green Smoothie",
         "Tag": ["Smoothie", "Drink", "Blender"],
-        "Servings": 2,
+        "Servings": 3,
         "Ingredients": {
-            "Orange": 2,
-            "Dates": 2,
-            "Banana": 1,
-            "Avocado": 1,
-            "Coconut Water": "120ml",
-            "Soy Milk": "120ml",
-            "Coconut Yogurt": "120ml",
-            "Mint": "5 leaves",
-            "Spinach": "45g"
-            }
+            "Mango": 1,
+            "Banana": 2,
+            "Peach": "250g",
+            "Kale": "25g",
+            "Soy Milk": "480ml",
+            "Flax Seeds": "1 tsp"},
+        "Instructions": "1. Add all ingredients to a blender 2.Blend until smooth 3. Drink in a tall glass or add to a bowl with toppings"          
     }
 
     # Convert new_recipe to a DataFrame and concat it into the recipe_book
@@ -191,13 +188,54 @@ modified_recipe_book = modify_recipe_book()
 # Ingredients inherit from a class?
 # Put recipes in a separate file and read it in
 # Use Pandas to store recipes
-# Does not allow for duplicate recipes
 
-# Allow user to enter their own recipes
-# Allows user to enter their shopping
 # Asks the user how much of an ingredient they have in order to fulfill the top 3 recipes
 # Suggests a list of the top 3 most common ingredients needed (based on ingredieant frequency) 
 
 # Function that suggests ingredient swaps to reduce recipe price
 # Ingredient price changes with the season (4 prices per item?)
+
+
+## Blog ##
+# How to meal prep smoothies
+
+## Functionality ##
+# Ability to swap ingredients
+# Arrange ingredients by catagory (f+v, dairy, herbs+spices)
+# Arrange ingredients by quantity
+# Arrange ingredients by price
+# Change number of servings, ingrediants change accordingly
+
+## Ingredients ##
+# Recipies contain ingredients rather than manually written in
+# Each recipe has a price
+# Each ingredient has nutritional info
+# Each ingredient has season availability per climate zone
+
+## Meal Prep ##
+# Automatic timer
+# Combines recipe instructions for quicker prep
+# Each step is timed
+# Asks user to time themself during specific tasks for improved timing
+
+## Pantry ##
+# Allows user to enter their shopping
+# Allows user to enter ingredient prices
+
+## Profile ##
+# Ability to set the number of fruit/veg per day
+# Ability to set macros
 # Takes the users climate zone into account
+
+## Recipe Book ##
+# Nutritional Info
+# Difficulty
+# Number of fruit/veg
+# Allow user to enter their own recipes
+# Does not allow for duplicate recipes
+# Recipies that are very simmilar should be merged
+# Ingredients from merged recipies should be listed as optional or swaps
+
+## Zero Waste ##
+# Use leaves (carrot tops) in smoothies
+# Use vegetable peel as salad topping
