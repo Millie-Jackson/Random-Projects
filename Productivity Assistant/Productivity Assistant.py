@@ -3,34 +3,37 @@ import time # for pomidor timer
 
 
 
-def set_timer(option) -> None:
+def set_timer(option=None, text_box=None) -> None:
 
     """
     Set a timer for 'pomidor' work sessions with breaks.
 
     Parameters:
-        option (int): The number of 'pomidors' (work sessions) chosen by the user.
-                      Valid options are 1, 2, or 3.
+        option (int, optional): The number of 'pomidors' (work sessions) chosen by the user.
+                                Valid options are 1, 2, or 3. Defaults to None.
+        text_box (Text, optional): The tkinter Text widget to display the timer messages.
+                                   Defaults to None.
 
     Returns:
         None
 
     The function sets two timers: one for the work session and another for the break session.
     For each 'pomidor', the work timer is set for 25 minutes, followed by a 5-minute break.
-    The work timer will display a message "Work time!" after the work duration expires,
-    and the break timer will display "Break time!" after the break duration expires.
+    The work timer will display messages for "Work time!" and "Break time!" in the specified
+    text_box after the work and break durations expire.
     """
 
-    work_duration = option * 25
-    break_duration = option * 5
+    if option is not None and text_box is not None:
+        work_duration = option * 25
+        break_duration = option * 5
 
-    print(f"Work for {work_duration} minutes")
-    #time.sleep(work_duration * 60)
-    print("Break time!")
+        text_box.insert(tk.END, f"Work for {work_duration} minutes\n")
+        #time.sleep(work_duration * 60)
+        text_box.insert(tk.END, "Break time!\n")
 
-    print(f"Break for {break_duration} minutes")
-    #time.sleep(break_duration * 60)
-    print("Work time!")
+        text_box.insert(tk.END, f"Break for {break_duration} minutes\n")
+        #time.sleep(break_duration * 60)
+        text_box.insert(tk.END, "Work time!\n")
 
     return None 
 
@@ -64,7 +67,41 @@ def get_pomidor() -> int:
 
     return int
 
+def start_timer(option, text_box, automatic_start_var) -> None:
+
+    """
+    Start the timer based on user-selected options.
+
+    This function is called when the "Start Timer" button is pressed.
+    It reads the user-selected options for 'pomidor' work sessions from the UI.
+    If the automatic start option is selected, it calls the set_timer() function
+    to start the timer with the selected number of 'pomidors' automatically.
+    If the automatic start option is not selected, it displays a message in the text box
+    indicating that the timer will start on button press.
+    """
+
+    if automatic_start_var.get() == 1:
+        set_timer(option, text_box)
+    else:
+        text_box.insert(tk.END, "Press start to start timer\n")
+    
+    return None
+
 def ui() -> None:
+   
+    """
+    Create the tkinter-based user interface for the Pom Timer application.
+
+    Returns:
+        None
+
+    The function sets up the graphical user interface using tkinter.
+    It includes an entry field for the user to input the desired number of 'pomidor' work sessions.
+    The user can also choose an option to start the timer automatically or manually on button press.
+    The timer messages are displayed on a text box within the application window.
+    When the user clicks the "Start Timer" button, the timer messages are displayed in the text box
+    as the timers progress.
+    """
 
     # Main application
     app = tk.Tk()
@@ -77,8 +114,17 @@ def ui() -> None:
     pomidor_entry = tk.Entry(app, textvariable=pomidor_var)
     pomidor_entry.pack()
 
-    # Start timer
-    start_button = tk.Button(app, text="Start Timer", command=set_timer)
+    # Automatic Start Pom Checkbutton
+    automatic_start_var = tk.IntVar()
+    automatic_start_checkbutton = tk.Checkbutton(app, text="Start Timer Automatically", variable=automatic_start_var)
+    automatic_start_checkbutton.pack()
+
+    # Text widget to display messages
+    text_box = tk.Text(app, height=10, width=40)
+    text_box.pack()
+
+    # Start timer button
+    start_button = tk.Button(app, text="Start Timer", command=lambda: start_timer(pomidor_var.get(), text_box, automatic_start_var))
     start_button.pack()
 
     app.mainloop()
@@ -160,8 +206,9 @@ if __name__ == "__main__":
 # Play noise when pom is finished
 # Set a custom time
 # Set custom break times
+# Wipe text box after typing in a number
 # Parkinsons Law
-# Option for timers to start automatically or on a button press
+# Display the timer
 # the time.sleep() function will halt the program execution for the specified duration, so be mindful when using it in your code. If you want to perform other actions while the timer is running, you can consider using threading or asynchronous programming. 
 
 # SECOND BRAIN #
@@ -220,6 +267,7 @@ if __name__ == "__main__":
 # UI #
 # Ask questions in a text box
 # Display the timer on screen
+# Add a menu to choose between features
 # Themes
     # Neon
     # Spring
@@ -240,9 +288,11 @@ if __name__ == "__main__":
 # Asks the user how many pomidors
 # Set timer for short (1 pom), medium (2 poms) or long (3 poms)
 # Add break times to pomidors
+# Option for timers to start automatically or on a button press
 
 # UI #
 # Basic UI
+# Displays text to screen
 
 
 
