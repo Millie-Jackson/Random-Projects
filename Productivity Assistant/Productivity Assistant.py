@@ -159,6 +159,13 @@ if __name__ == "__main__":
 ### TO DO ###
 
 # CALENDAR #
+# Round up
+    # Review previous weeks success and failures
+    # Look at thte next 4 weeks
+    # Make sure your goals are still aligned to your priorities
+    # Update to do list, make sure your on track
+    # What 3 things would I accomplish  in the next week?
+    # Schedual time to work towards these three things
 # Add tasks in pomidors
 # Brakes are added at the end of pomidors
 # Tasks can be automatically allocated to calendar based on carcadian rythem
@@ -168,6 +175,11 @@ if __name__ == "__main__":
     # Takes into account when you get hungry compared to macros
 # Suggest bedtime
 # Suggest waketime
+# Levels
+    # Level 1: Not using a calendar
+    # Level 2: Schedualing appointments
+    # Level 3: Timeboxing
+    # Level 4: Ideal w eek
 # Research
     # App: Motion
     # Book: The Power of When'
@@ -179,12 +191,17 @@ if __name__ == "__main__":
 # Habit tracker
 # System tracker
 # System builder
+# Experimental habits
+    # Define: SMART task
+    # Do:
+    # Review: Make changes
 # Systems
     # Cleaning/tidy habit (everybody cleans/tidy)
     # Cosmetic
     # Hygeine
     # Pre Work Session
     # Post Work Session
+    # Gym
 # Research
     # The Poka-Yoke Approach
     # Book: Atomic Habits
@@ -227,6 +244,8 @@ if __name__ == "__main__":
 # Tasks can be allocated an esimated pom time
 # Tasks can be allocated a difficulty
 # Tasks can be grouped by study subject or catagory
+# Daily Adventure: Choose one task at the begining of each day that is the most important thing you need to do that day
+# Side Quests: Choose up to three secondary tasks at the begining of each day (1 work, 1 life, 1 social)
 # Automatic Eisenhower matrix
     # Auto list tasks that can be delegated to chatGPT
         # Make key notes from a source
@@ -263,6 +282,9 @@ if __name__ == "__main__":
         #
     # 1 year
         #
+
+# Touchtyping tool
+# Learn to touchtype
 
 # UI #
 # Ask questions in a text box
