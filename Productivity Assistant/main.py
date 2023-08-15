@@ -1,3 +1,21 @@
+"""
+Main Program
+
+This script provides the user with the choice to use either the Calculator or Pom Timer functionality.
+It imports the Calculator and PomTimer classes from their respective modules and creates the corresponding user interfaces.
+
+Author:
+    [Millie J]
+
+Date:
+    [15.08.2023]
+
+Version:
+    0.2
+"""
+
+
+
 import tkinter as tk # for UI
 from PomidorTimer import PomTimer
 from Calculator import Calculator
@@ -5,6 +23,16 @@ from Calculator import Calculator
 
 
 def main() -> None:
+
+    """
+    Main program function.
+
+    Prompts the user to choose between using the Calculator or Pom Timer functionality.
+    Initializes the chosen functionality's user interface and enters the main event loop.
+
+    Returns:
+        None
+    """
 
     while True:
         response = input("Calculator or Pom Timer?").lower()
@@ -73,6 +101,18 @@ if __name__ == "__main__":
 # Habit tracker
 # System tracker
 # System builder
+# Social Accountability?
+# Gamification
+# Schedual relax time
+# Start Small
+# The Power Of Three Rule
+# Daily Journal
+# Visualisation
+# Recover From mistakes
+# Manage Your Thoughts
+# Delayed Gratification
+# Organisation
+# Eliminate 'but'
 # Experimental habits
     # Define: SMART task
     # Do:
@@ -89,8 +129,33 @@ if __name__ == "__main__":
     # Book: Atomic Habits
     # Book: The Life-Changing Magic of Tidying
     # Book: Working Hard, Hardly Working
+    # App: Habitify
+    # App: Awesom Habits
+    # App: Habitica
+    # App: Strides
+    # App: Productive
+    # App: Streaks
+    # App: Everyday
+    # App: HabitBull
+    # App: Avocation
+    # App: Habit Tracker
+    # App: Tangerine 
 
-# NOTES #
+## Journal ##
+# Gratitude Journal
+# Reccord thoughts on the fly
+    # Ask user to sort/tag thoughts at the end of a session 
+# Diary
+# Use Tags on Diary
+    # Search for relivant entries on a topic
+    # Summarise entries on a topic
+# Review
+    # Habits
+    # Progress
+    # Calander
+    # Study
+
+## NOTES ##
 # Research how to take good notes
 # Templates
     # Meeting notes template
@@ -125,7 +190,14 @@ if __name__ == "__main__":
     # Active Recall
     # Advanced Information Processing
     # Active Recall
+    # 5 Step Study System
+        # Start Revising Early
+        # Automation
+        # Notes Consolidation
+        # Recap Lecture Slides
+        # Past Papers
     # App: Miro
+    # App: Scribe
 
 # TASK LIST # 
 # Tasks can be allocated an esimated pom time
@@ -173,10 +245,13 @@ if __name__ == "__main__":
 # Touchtyping tool
 # Learn to touchtype
 
-# UI #
+### UI ###
 # Ask questions in a text box
 # Display the timer on screen
 # Add a menu to choose between features
+# Allow for multiple feature/tool use simultaniously
+# Allow for window pop outs for multiple features/tools
+# Allow for combined window box placements to customise the 'desktop'
 # Themes
     # Neon
     # Spring
@@ -186,6 +261,10 @@ if __name__ == "__main__":
 # Tasks can be viewed in an Eisenhower matrix
 # Pop out timer (so you can have it in the corner of your screen)
 # Notes are contained in a virtual notebook with pages turning and contents
+
+### Research ###
+# Ikigai
+# Influencer: Mike Dee
 
 
 ### COMPLETED ###
@@ -198,6 +277,8 @@ if __name__ == "__main__":
 # Set timer for short (1 pom), medium (2 poms) or long (3 poms)
 # Add break times to pomidors
 # Option for timers to start automatically or on a button press
+# Added a calculator fram a previous project
+# Implemented OOP
 
 # UI #
 # Basic UI

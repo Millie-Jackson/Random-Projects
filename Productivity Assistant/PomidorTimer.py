@@ -31,7 +31,7 @@ class PomTimer:
 
 
 
-    def set_timer(self, option) -> None:
+    def set_timer(self, option, text_box) -> None:
 
         """
         Set a timer for 'pomidor' work sessions with breaks.
@@ -51,17 +51,17 @@ class PomTimer:
         text_box after the work and break durations expire.
         """
 
-        if option is not None and tk.text_box is not None:
+        if option is not None and text_box is not None:
             work_duration = option * 25
             break_duration = option * 5
 
-            tk.text_box.insert(tk.END, f"Work for {work_duration} minutes\n")
+            text_box.insert(tk.END, f"Work for {work_duration} minutes\n")
             #time.sleep(work_duration * 60)
-            tk.text_box.insert(tk.END, "Break time!\n")
+            text_box.insert(tk.END, "Break time!\n")
 
-            tk.text_box.insert(tk.END, f"Break for {break_duration} minutes\n")
+            text_box.insert(tk.END, f"Break for {break_duration} minutes\n")
             #time.sleep(break_duration * 60)
-            tk.text_box.insert(tk.END, "Work time!\n")
+            text_box.insert(tk.END, "Work time!\n")
 
         return None 
     
@@ -95,7 +95,14 @@ class PomTimer:
 
         return int
     
-    def start_timer(self) -> None:
+    def start_button_clicked(self) -> None:
+        option = self.pomidor_var.get()
+        automatic_start_var = self.automatic_start_var
+        self.start_timer(option, self.text_box, automatic_start_var)
+
+        return None
+
+    def start_timer(self, option, text_box, automatic_start_var) -> None:
 
         """
         Start the timer based on user-selected options.
@@ -109,7 +116,7 @@ class PomTimer:
         """
 
         if self.automatic_start_var.get() == 1:
-            self.set_timer(tk.option, tk.text_box)
+            self.set_timer(option, text_box)
         else:
             self.text_box.insert(tk.END, "Press start to start timer\n")
         
