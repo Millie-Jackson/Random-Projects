@@ -263,7 +263,16 @@ if __name__ == "__main__":
 # Notes are contained in a virtual notebook with pages turning and contents
 
 ### Research ###
+# Forsters Commitment Inventory
+# ABC Method
+# Kanban Schedual
+# Kaizen
+# PDCA
+# Poke Yoke
+# Effortless Productivity
 # Ikigai
+# App: Tapilo (Linkedin Help)
+# App: Tango (Create Tutorials)
 # Influencer: Mike Dee
 
 
