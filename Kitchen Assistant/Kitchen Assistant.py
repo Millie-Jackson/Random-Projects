@@ -5,7 +5,10 @@ import os # Creating the recipe book
 import csv # For recipe book and pantry
 import datetime # For finding seasonal ingredients/recipes
 
-pantry = [
+## PANTRY ###
+
+
+pantry_data = [
     {"Name": "Gnocchi", "Price Per G": 0.04, "Quantity": 100, "In Stock": False},
     {"Name": "Udon Noodles", "Price Per G": 0.03, "Quantity": 900, "In Stock": False},
     {"Name": "Meatballs", "Price Per G": 0.02, "Quantity": 300, "In Stock": False},
@@ -51,6 +54,60 @@ pantry = [
     {"Name": "Strawberry", "Season": ["June", "July", "August", "September"], "Price Per G": 0.0, "Quantity": 0, "In Stock": False},
     {"Name": "Watermelon", "Season": ["July", "August", "September"], "Price Per G": 0.0, "Quantity": 0, "In Stock": False}]
 
+def build_pantry(recipe_book) -> pd.DataFrame:
+
+    # Using a set to avoid duplicates
+    unique_ingredients = recipe_book['Ingredients'].apply(lambda x: list(x.keys()) if isinstance(x, dict) else []).explode().unique()
+
+    # Create Pantry DataFrame
+    pantry = pd.DataFrame({'Ingredient': list(unique_ingredients)})
+    # Set index
+    pantry.reset_index(drop=True, inplace=True)
+    # Name the DataFrame
+    pantry.name = 'Pantry'
+
+    return pantry
+
+def load_pantry(file_path) -> pd.DataFrame:
+    
+    pantry = pd.read_csv(file_path)
+
+    return pantry
+
+def save_pantry(pantry, file_path) -> None:
+    
+    pantry.to_csv(file_path, index=False)
+
+    return None
+
+def modify_pantry(file_path) -> pd.DataFrame:
+    
+    # Check if the file exists and isnt empty
+    # If it does exist it loads it
+    if os.path.exists(file_path):
+        pantry = load_pantry(file_path)
+    else:
+        # If the file doesnt exist, create it
+        pantry = build_pantry(recipe_book)
+
+    new_ingredient = [
+    {'Ingredient': "Apple",
+     'Tags': ['Fruit'],
+     'Quantity': 5,
+     'Price': 1.00,
+     'Season': "January, Febuary, September, October, November, December"
+     }]
+
+    # Append the new ingredient
+    pantry = pantry._append(new_ingredient, ignore_index=True)
+
+    # Save the pantry
+    save_pantry(pantry, file_path)
+
+    return pantry
+
+
+####
 ## RECIPE BOOK ##
 
 # A list of dictionaries | 1 dictionary per recipe
@@ -91,11 +148,35 @@ recipe_data = [
      'Ingredients': {'Spinach': '15g', 'Cucumber': '1/4', 'Orange': 1, 'Banana': 1, 'Apple': 2, 'Parsley (fresh)': '4 tbsp', 'Soy Milk': '240ml', 'Ginger': '1 tbsp', 'Chia Seeds': '1.5 tsp'},
      'Instructions': ",1. Add all ingredients to a blender 2.Blend until smooth 3. Drink in a tall glass or add to a bowl with toppings"},
 
+    {'Name': "Chocolate Hazelnut Smoothie",
+     'Tags': ['Smoothie', 'Drink', 'Blender'],
+     'Servings': 2,
+     'Ingredients': {'Cinnoman': '1/8 tsp', 'Vanilla Extract': '1/8 tsp', 'Cocoa Powder': '1 tbsp', 'Banana': 1, 'Dates': 2, 'Hazelnut Butter': '1 tbsp', 'Soy Milk': '180ml', 'Salt': '1 pinch'},
+     'Instructions': "1. Add all ingredients to a blender 2.Blend until smooth 3. Drink in a tall glass or add to a bowl with toppings"},
+
+    {'Name': "Strawberry, Pineapple and Mint Smoothie",
+     'Tags': ['Smoothie', 'Drink', 'Blender'],
+     'Servings': 2,
+     'Ingredients': {'Strawberries': '150g', 'Pineapple': '150g', 'Cucumber': '1/4', 'Orange': 1, 'Mint Leaves': 6, 'Coconut Water': '240ml'},
+     'Instructions': "1. Add all ingredients to a blender 2.Blend until smooth 3. Drink in a tall glass or add to a bowl with toppings"},
+
+    {'Name': "Peanut Butter Jelly Smoothie",
+     'Tags': ['Smoothie', 'Drink', 'Blender'],
+     'Servings': 1,
+     'Ingredients': {'Strawberries': '113g', 'Banana': 1, 'Peanut Butter': '1.5 tbsp', 'Soy Milk': '180ml'},
+     'Instructions': "1. Add all ingredients to a blender 2.Blend until smooth 3. Drink in a tall glass or add to a bowl with toppings"},
+
+    {'Name': "Blueberry Anti-Inflammatory Smoothie",
+     'Tags': ['Smoothie', 'Drink', 'Blender'],
+     'Servings': 2,
+     'Ingredients': {'Blueberries': '120g', 'Apple': 1, 'Ginger': '1 tbsp', 'Goji Berries': '2 tbsp', 'Nettle Leaf Powder': '1 tsp', 'Beetroot': 1, 'Flax Seeds': '2 tbsp', 'Pumpkin Seeds': '1 tbsp', 'Coconut Water': '360ml'},
+     'Instructions': "1. Add all ingredients to a blender 2.Blend until smooth 3. Drink in a tall glass or add to a bowl with toppings"},
+
     {'Name': "",
      'Tags': ['Smoothie', 'Drink', 'Blender'],
      'Servings': 0,
      'Ingredients': {'Item1': 0},
-     'Instructions': "1. Stuff"}]
+     'Instructions': "1. Add all ingredients to a blender 2.Blend until smooth 3. Drink in a tall glass or add to a bowl with toppings"}]
 
 def build_recipe_book() -> pd.DataFrame:
 
@@ -292,9 +373,11 @@ def calculate_recipe_season(recipe_book, ingredient_seasons) -> None:
 
     return
 '''
-build_recipe_book()
-modify_recipe_book('recipe_book.csv') # Modifies and saves
+recipe_book = build_recipe_book()
+recipe_book = modify_recipe_book('recipe_book.csv') # Modifies and saves
 #recipe_book = load_recipe_book('recipe_book.csv')
+pantry = build_pantry(recipe_book)
+modify_pantry('pantry.csv') # Modifies and saves
 
 #calculate_recipe_season(recipe_book, pantry)
 
@@ -345,6 +428,13 @@ seasonal_list.pack()
 app.mainloop()
 
 
+
+## APP NAMES ##
+# Kitchen Wizard
+# SpoonSavvy
+# SpoonSage
+# FlavorFriend
+# NomNom
 
 ## TO DO ##
 # Use a data class
