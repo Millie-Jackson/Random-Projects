@@ -388,7 +388,7 @@ modify_pantry('pantry.csv') # Modifies and saves
 
 
 
-def update_seasonal_ingredients() -> None:
+'''def update_seasonal_ingredients() -> None:
 
     current_month = month_var.get()
     seasonal_list.delete(0, tk.END) # Clear the list
@@ -398,7 +398,7 @@ def update_seasonal_ingredients() -> None:
             seasonal_list.insert(tk.END, f"{ingredient['Name']} is in season")
 
     return
-
+'''
 # Create main window
 app = tk.Tk()
 app.title("Seasonal Ingredients")
