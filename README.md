@@ -17,6 +17,15 @@ Supervised Learning:
 Supervised learning is a machine learning paradigm where the model is trained on labeled data, meaning that the input data is accompanied by corresponding output labels. During training, the model learns to map input features to output labels, enabling it to make predictions on unseen data.
 
 Visualisations:
+
+Histogram
+![image](https://github.com/Millie-Jackson/Random-Projects/assets/100158073/4f2469ef-ccae-488d-a2b3-dd85eb382a0f)
+
+Correlation Heatmap
+![image](https://github.com/Millie-Jackson/Random-Projects/assets/100158073/7d49affb-5964-4933-b121-850f1a952b1d)
+
+A pairplot was not included as the amount of features (60) was too great and computationally expencive. Especially for my little 10 year old laptop!
+
 Boxplot
 ![image](https://github.com/Millie-Jackson/Random-Projects/assets/100158073/192a86e6-2c3f-434a-ad37-697fc5d554a3)
 
