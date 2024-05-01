@@ -4,6 +4,7 @@ A bunch of fun project done in my spare time
 
 
 **Project: SONAR Rock vs Mine Prediction**
+
 This script demonstrates the application of a logistic regression model for binary classification using supervised learning techniques. In this scenario, the model is trained to classify sonar signals as either rocks or mines based on certain features extracted from the signals.
 
 Logistic Regression Model:
