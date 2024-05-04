@@ -29,6 +29,46 @@ A pairplot was not included as the amount of features (60) was too great and com
 Boxplot
 ![image](https://github.com/Millie-Jackson/Random-Projects/assets/100158073/192a86e6-2c3f-434a-ad37-697fc5d554a3)
 
+Performance Metrics:
+
+Accuracy Score (training): 0.83
+Accuracy Score (test): 0.76
+
+Precision Score (training): 0.83
+Precision Score (test): 0.75
+
+Recall Score (training): 0.86
+Recall Score (test): 0.82
+
+F1 Score (training): 0.85
+F1 Score (test): 0.78
+
+ROC-AUC Score (training): 0.92
+ROC_AUC Score (test): 0.74
+
+\Classification Report (training):
+              precision    recall  f1-score   support
+
+           M       0.83      0.86      0.85       100
+           R       0.83      0.80      0.82        87
+
+    accuracy                           0.83       187
+   macro avg       0.83      0.83      0.83       187
+weighted avg       0.83      0.83      0.83       187
+
+\Classification Report (test):
+              precision    recall  f1-score   support
+
+           M       0.75      0.82      0.78        11
+           R       0.78      0.70      0.74        10
+
+    accuracy                           0.76        21
+   macro avg       0.76      0.76      0.76        21
+weighted avg       0.76      0.76      0.76        21
+
+Confusion Matrix
+![image](https://github.com/Millie-Jackson/Random-Projects/assets/100158073/f36009e6-40e5-4e1e-b035-aae43c714824)
+
 
 Usage:
 
@@ -48,8 +88,6 @@ scikit-learn
 
 Additions:
 - Explore and visualize the data to gain insights and identify any patterns or correlations between features.
-- Besides accuracy, evaluate the model using other performance metrics such as precision, recall, F1-score, and ROC-AUC score to get a comprehensive understanding of its performance.
-- Plot a confusion matrix to visualize the model's predictions and identify any misclassifications.
 - Perform hyperparameter tuning to optimize the model's performance. Use techniques like grid search or random search to find the best combination of hyperparameters.
 - Implement cross-validation to assess the model's generalization performance and reduce the risk of overfitting. This ensures that the model's performance is robust across different subsets of the data.
 - Provide explanations for model predictions using techniques such as feature importance analysis or partial dependence plots. This helps in understanding which features are driving the model's decisions.
