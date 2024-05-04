@@ -29,6 +29,43 @@ A pairplot was not included as the amount of features (60) was too great and com
 Boxplot
 ![image](https://github.com/Millie-Jackson/Random-Projects/assets/100158073/192a86e6-2c3f-434a-ad37-697fc5d554a3)
 
+Performance Metrics:
+
+Accuracy Score (training): 0.83
+Accuracy Score (test): 0.76
+
+Precision Score (training): 0.83
+Precision Score (test): 0.75
+
+Recall Score (training): 0.86
+Recall Score (test): 0.82
+
+F1 Score (training): 0.85
+F1 Score (test): 0.78
+
+ROC-AUC Score (training): 0.92
+ROC_AUC Score (test): 0.74
+
+\Classification Report (training):
+              precision    recall  f1-score   support
+
+           M       0.83      0.86      0.85       100
+           R       0.83      0.80      0.82        87
+
+    accuracy                           0.83       187
+   macro avg       0.83      0.83      0.83       187
+weighted avg       0.83      0.83      0.83       187
+
+\Classification Report (test):
+              precision    recall  f1-score   support
+
+           M       0.75      0.82      0.78        11
+           R       0.78      0.70      0.74        10
+
+    accuracy                           0.76        21
+   macro avg       0.76      0.76      0.76        21
+weighted avg       0.76      0.76      0.76        21
+
 
 Usage:
 
