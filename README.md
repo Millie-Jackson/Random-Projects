@@ -66,6 +66,9 @@ weighted avg       0.83      0.83      0.83       187
    macro avg       0.76      0.76      0.76        21
 weighted avg       0.76      0.76      0.76        21
 
+Confusion Matrix
+![image](https://github.com/Millie-Jackson/Random-Projects/assets/100158073/f36009e6-40e5-4e1e-b035-aae43c714824)
+
 
 Usage:
 
@@ -85,8 +88,6 @@ scikit-learn
 
 Additions:
 - Explore and visualize the data to gain insights and identify any patterns or correlations between features.
-- Besides accuracy, evaluate the model using other performance metrics such as precision, recall, F1-score, and ROC-AUC score to get a comprehensive understanding of its performance.
-- Plot a confusion matrix to visualize the model's predictions and identify any misclassifications.
 - Perform hyperparameter tuning to optimize the model's performance. Use techniques like grid search or random search to find the best combination of hyperparameters.
 - Implement cross-validation to assess the model's generalization performance and reduce the risk of overfitting. This ensures that the model's performance is robust across different subsets of the data.
 - Provide explanations for model predictions using techniques such as feature importance analysis or partial dependence plots. This helps in understanding which features are driving the model's decisions.
