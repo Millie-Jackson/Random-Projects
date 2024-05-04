@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn. metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, classification_report
+from sklearn. metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, classification_report, confusion_matrix
 
 # Load dataset into a Dataframe
 sonar_data = pd.read_csv('sonar_data.csv', header=None)
@@ -32,14 +32,6 @@ model = LogisticRegression()
 
 # Train the model
 model.fit(X_train, Y_train)
-
-# Model Evaluation (training data)
-#X_train_prediction = model.predict(X_train)
-#training_data_accuracy = accuracy_score(X_train_prediction, Y_train)
-
-# Model Evaluation (test data)
-#X_test_prediction = model.predict(X_test)
-#test_data_accuracy = accuracy_score(X_test_prediction, Y_test)
 
 ###Performance Evaluation###
 Y_train_prediction = model.predict(X_train)
@@ -118,6 +110,14 @@ for i in range(sonar_data.shape[1] - 1): # Exclude the last column (string)
    plt.subplot(6, 11, i+1)
    sns.boxplot(x=sonar_data[60], y=sonar_data[i], palette="Set3")
 plt.tight_layout()
+
+# Confusion Matrix
+conf_matrix = confusion_matrix(Y_test, Y_test_prediction)
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=['Rock', 'Mine'], yticklabels=['Rock', 'Mine'])
+plt.xlabel('Predicited Labels')
+plt.ylabel('True Labels')
+plt.title('Confusion Matrix')
 
 plt.show()
 
