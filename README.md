@@ -16,7 +16,7 @@ Binary classification is a type of supervised learning where the goal is to cate
 Supervised Learning:
 Supervised learning is a machine learning paradigm where the model is trained on labeled data, meaning that the input data is accompanied by corresponding output labels. During training, the model learns to map input features to output labels, enabling it to make predictions on unseen data.
 
-Visualisations:
+Exploratory Data Analysis (EDA):
 
 Histogram
 ![image](https://github.com/Millie-Jackson/Random-Projects/assets/100158073/4f2469ef-ccae-488d-a2b3-dd85eb382a0f)
